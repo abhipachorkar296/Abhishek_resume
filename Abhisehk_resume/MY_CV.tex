@@ -1,0 +1,213 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{deedy-resume-openfont}
+\documentclass[10pt]{report}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\fontspec{[fontawesome-webfont.ttf]}
+\usepackage{fontawesome}
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{}{Abhishek Pachorkar}{
+Sophomore @ Mathematics and Computing, IIT Kharagpur}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education} 
+
+\subsection*{Indian Institute of \\ Technology Kharagpur}
+\descript{Integrated M.Sc in  \\ Mathematics and Computing \\ CGPA: 8.40/10}
+\location{2018-2023 | West Bengal, India}
+\sectionsep
+
+\subsection*{Maharashtra State Board of Secondary Education}
+\descript{Higher Secondary Education \\ Certificate Examination}
+\location{ Percentage: 85.08\%}
+\location{May 2018 | Nasik, Maharashtra, India}
+\sectionsep
+
+\subsection*{Maharashtra State Board  \\ of Secondary Education}
+\descript{Secondary School \\ Certificate Examination}
+\location{ Percentage: 94.40\%}
+\location{May 2016 | Nasik, Maharashtra, India}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     CONTACT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{CONTACT} 
+\descript{RK Hall, \\ IIT Kharagpur,\\ West Bengal - 721302 \\ Phone: +91-82085 99780}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{LINKS} 
+\faEnvelope\ {\href{mailto:abhipachorkar296@gmail.com}{ abhipachorkar296@gmail.com}}\\
+\faGithub\ {\href{https://github.com/abhipachorkar296}{ abhipachorkar296}}\\
+\faLinkedinSquare\ {\href{https://www.linkedin.com/in/abhishek-pachorkar}{ abhishek-pachorkar}}\\
+
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\emph{T - Theory | L - Laboratory}\\
+\descript{Completed}
+Programming \& Data Structures (T/L)\\~\\
+\descript{Ongoing}
+Design \& Analysis of Algorithm (T/L) \\~\\
+\descript{Online Courses}
+\href{https://www.coursera.org/learn/machine-learning}{Machine Learning - Andrew Ng}\\
+\href{https://www.coursera.org/specializations/algorithms?}{Algorithms Specialization (Ongoing)}\\
+\href{https://www.coursera.org/specializations/deep-learning}{deeplearning.ai (Ongoing)}
+
+\sectionsep
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{PROJECTS}
+
+\runsubsection{AERIAL ROBOTICS KHARAGPUR}
+\descript{Software Team Member}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Aerial Robotics Kharagpur is a research group mainly involved in the development of autonomous drones performing various tasks.   
+\item Part of a software team which worked on ORB-SLAM (Simultaneous Localisation and Mapping) which is an indoor localisation algorithm for drones.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{\href{https://github.com/abhipachorkar296/crusade}{CRUSADE}}
+\descript{Kshitij 2019 Challenge}
+\begin{tightemize}
+\item {\emph{Problem Statement}:} Used a monocular camera to guide a bot through grey-scale environment.   
+\item Executed different approaches using Python-OpenCV functions to extract exact path boundaries including implementing generalized Huff Transform and contour detection using gradients. 
+\item Used the path boundaries to estimate state of bot and required control inputs to guide it to destination.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Path Planning Using RRT* Algorithm}
+\descript{ARK Task Round}
+\begin{tightemize}
+\item Optimized multiple data structures and path-finding algorithms such as RRT*(Rapidly-exploring random trees) to find a solution for a given dynamic maze with moving obstacles in random motion. Implemented it in C++ using OpenCV.
+\item Developed a new algorithm to plot disparity map of two stereo images and applied it to plot depth gradients .
+
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Technical Skills}
+\begin{tabular}{r|p{15cm}}
+\textsc{Programming Languages} & \textbf{ C | C++ | Python | GNU Octave} \\
+\textsc{Libraries / Frameworks} & \textbf{OpenCV | Numpy | flask }\\
+\textsc{Robotic and Control} & \textbf{ROS | Solidworks | Simulink }\\
+\textsc{Systems and Platforms} & \textbf{Git | Linux }\\
+\textsc{Others} & \textbf{HTML | CSS | MySQL }\\
+\end{tabular}
+%----------------------------------------------------------------------------------------
+%	Scholastic Achievements
+%----------------------------------------------------------------------------------------
+
+\section{SCHOLASTIC ACHIEVEMENTS}
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+
+\item {\emph{Inspire Scholarship}:} Among the top 1\% students in the country to receive the scholarship for academic prowess. \\
+\item{JEE Advanced \emph{AIR 3359}:} Under top 1\% amongst more than 2,00,000 students \\
+\item {JEE Main \emph{AIR 249}:} In top 0.02\% amongst more than 12,00,000 students. \\
+\item {Secured Bronze Medal in Homi Bhabha Bal Vaidnyanik Science Talent Competition}\\
+\item {Among Top 10\% in National Standard Examination In Junior Science Examination}\\
+\item {Completed IEEE certified workshop in image processing  }\\
+\item {Secured 34 rank in Maharashtra Olympiad Movement examination}\\
+\end{tightemize}
+\sectionsep
+
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}\
